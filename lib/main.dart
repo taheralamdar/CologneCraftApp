@@ -2,30 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
-  runApp(const CologneCraftApp());
+  runApp(const MyApp());
 }
 
-class CologneCraftApp extends StatelessWidget {
-  const CologneCraftApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Cologne Craft',
-      home: const HomePage(),
+      home: WebViewScreen(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class WebViewScreen extends StatefulWidget {
+  const WebViewScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<WebViewScreen> createState() => _WebViewScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _WebViewScreenState extends State<WebViewScreen> {
   late final WebViewController controller;
   int progress = 0;
 
@@ -44,14 +43,16 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://www.colognecraft.com'));
+      ..loadRequest(
+        Uri.parse('https://www.colognecraft.com'),
+      );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Cologne Craft"),
+        title: const Text('Cologne Craft'),
       ),
       body: Column(
         children: [
