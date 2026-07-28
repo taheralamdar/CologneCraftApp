@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const CologneCraftApp());
 }
 
@@ -11,11 +12,15 @@ class CologneCraftApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'CologneCraft',
       debugShowCheckedModeBanner: false,
-      title: 'Cologne Craft',
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.black,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1A1A1A),
+          brightness: Brightness.light,
+        ),
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: const WelcomeScreen(),
     );
