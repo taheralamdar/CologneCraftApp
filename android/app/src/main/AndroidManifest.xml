@@ -53,7 +53,7 @@
     </queries>
 
     <application
-        android:label="CologneCraft"
+        android:label="COLOGNE CRAFT"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
